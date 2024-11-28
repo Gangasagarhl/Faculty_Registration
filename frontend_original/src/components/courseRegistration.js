@@ -4,7 +4,6 @@ import "../style.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
-import "../style.css";
 const CourseForm = ({ userData }) => {
   const [courseList, setCourseList] = useState([
     {
@@ -80,7 +79,7 @@ const CourseForm = ({ userData }) => {
             setOpen(false);
             // console.log(courseList[index])
 
-            if (index == -1) return;
+            if (index === -1) return;
             {
               handleAddEmployee(index);
             }

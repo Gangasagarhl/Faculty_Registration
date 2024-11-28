@@ -1,12 +1,10 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import Header from "./components/header";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import RegistrationForm from "./components/registration";
 import Login from "./components/login";
 import CourseForm from "./components/courseRegistration";
 import registerService from "./services/register";
-import Exit from "./components/exit";
 import { confirmAlert } from "react-confirm-alert";
 
 function App() {
@@ -57,7 +55,7 @@ function App() {
     //setSelectedList(currList)
     console.log(courseList.length);
 
-    if (courseList.length == 2) {
+    if (courseList.length === 2) {
       alertBox("No course available");
       setUserData(null);
     } else if (currList === null) {

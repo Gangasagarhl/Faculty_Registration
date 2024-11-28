@@ -1,8 +1,7 @@
 import React, { useState, setState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+
 import { useNavigate } from "react-router-dom";
-//import '../style.css'
+import './RegistrationForm.css';
 
 const RegistrationForm = ({ startRegister }) => {
   // Defining hooks
@@ -14,8 +13,8 @@ const RegistrationForm = ({ startRegister }) => {
   const [photo, setPhoto] = useState("hello");
   const [departmentList, setDepartmentList] = useState([{ name: "", id: "" }]);
   const [departmentId, setDepartmentId] = useState(null);
-  const [isRegister, setIsRegister] = useState(true);
-  const [src, setSrc] = useState("");
+  // const [isRegister, setIsRegister] = useState(true);
+  // const [src, setSrc] = useState("");
 
   const navigate = useNavigate();
 
