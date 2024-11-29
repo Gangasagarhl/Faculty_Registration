@@ -43,7 +43,7 @@ public interface CourseScheduleRepository extends JpaRepository<CourseSchedule, 
             "    JOIN courses co3 ON cs3.course_id = co3.course_id " +
             "    WHERE cs3.course_day = cs.course_day " +
             "    AND cs3.course_time = cs.course_time " +
-            "    AND co3.employee_id <> :id" +  // Employee ID for conflict check
+            "    AND co3.employee_id = :id" +  // Employee ID for conflict check
             ")", nativeQuery = true)
 
     List<CourseSchedule> getcourseScheduleList(Integer id);

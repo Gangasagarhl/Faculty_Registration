@@ -1,5 +1,9 @@
 import axios from "axios";
 const registerUrl = `http://localhost:8080/emp/register`;
+
+
+// this is the async register register which gets the data from the backend 
+// Till then this waits for the data and nce the data is fetecjed from the 
 const register = async (details) => {
   // Send the login credential data to the loginBaseUrl API endpoint as an HTTP POST request
   // Note the async-await

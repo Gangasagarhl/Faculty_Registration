@@ -3,6 +3,7 @@ import React, { useState, setState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './RegistrationForm.css';
 
+// this is used to get the whole data from the second page of the /regster
 const RegistrationForm = ({ startRegister }) => {
   // Defining hooks
   const [title, setTitle] = useState(null);
@@ -60,7 +61,7 @@ const RegistrationForm = ({ startRegister }) => {
   // On clicking submit this will trigger
   const handleRegister = async (event) => {
     // console.log(title, firstName, lastName, email, password, photo);
-    event.preventDefault();
+    event.preventDefault();// used to prevent the default behaviour of teh component, that is page reloading
     // console.log(photo)
     const details = {
       title,

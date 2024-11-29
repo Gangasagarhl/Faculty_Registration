@@ -11,24 +11,25 @@ function Login({ onLogin }) {
 
   const API_BASE_URL = "http://localhost:8080";
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    setIsLoading(true);
+  const handleLogin = async (e) => 
+    {
+      e.preventDefault();// prevents from realoding
+      setError("");
+      setIsLoading(true);
 
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
 
-      if (!response.ok) {
-        if (response.status === 401) throw new Error("Invalid email or password");
-        if (response.status === 404) throw new Error("Server endpoint not found");
-        throw new Error(`Server responded with status: ${response.status}`);
+        if (!response.ok) {
+          if (response.status === 401) throw new Error("Invalid email or password");
+          if (response.status === 404) throw new Error("Server endpoint not found");
+          throw new Error(`Server responded with status: ${response.status}`);
       }
 
       const data = await response.json();
@@ -64,7 +65,7 @@ function Login({ onLogin }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="input"
-            disabled={isLoading}
+            disabled={isLoading}// three states, before, during, after
             required
             placeholder="Enter your email"
           />
@@ -82,6 +83,7 @@ function Login({ onLogin }) {
             required
             placeholder="Enter your password"
           />
+          {/*By default what is happening ; when you press the sub,it button */}
         </div>
 
         <button

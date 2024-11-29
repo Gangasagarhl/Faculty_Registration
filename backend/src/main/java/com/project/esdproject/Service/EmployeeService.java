@@ -34,7 +34,9 @@ public class EmployeeService {
     public List<Employees> getEmployeeList() {
         return employeeRepository.findAll();
     }
-
+   //@PersistenceContext is an annotation used in Java Persistence API (JPA) to inject an EntityManager into a Spring-managed bean.
+   //
+   //It is typically used in a service or repository class to interact with the database through JPA, handling the persistence context for entities. The injected EntityManager is automatically managed by Spring, ensuring proper handling of transactions and session contexts.
     @Transactional
     public Employees addEmp(Employees employee) {
         try {

@@ -1,0 +1,19 @@
+Flow:
+
+1. The configuartion etc etc is intialised during the strt of the server.
+2.  First the Admin authentication is callled.
+    a. Once the authentication is done the front end will get the admin mail and password, which has to authenticated.
+    api - /admin/api/login
+    b. Next page is registration page.
+
+3. When Registration page opens with /register,  then it have form to get filled.
+4. While filling the form, it will pass the request asking for department.
+5. Department  controller:
+    When it is time for registration, from department service is used to get all the data from the server.
+
+6. CourseSchedule -
+    In the course schedule table, this is used to make the drop down list.
+    In the front end.
+
+
+7.
